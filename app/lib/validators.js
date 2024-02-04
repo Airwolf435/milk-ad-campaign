@@ -4,6 +4,7 @@ const addressPattern = /^[0-9]{1,4}(\s[a-zA-Z]+)+$/;
 const emailPattern = /^[a-zA-Z0-9-_]+[.]?[a-zA-Z0-9-_]*@[a-zA-Z0-9-_]+.[a-zA-Z]{2,3}$/;
 const birthdayPattern = /^[0-3][0-9]\/[0-9]{2}\/[0-9]{2}$/;
 const boolPattern = /^(True|true|False|false|0|1){1}$/;
+const postalCodePattern = /^[a-zA-Z][0-9][a-zA-Z]-?[0-9][a-zA-Z][0-9]$/
 
 
 export function validateName(str){
@@ -16,6 +17,10 @@ export function validatePhoneNumber(str){
 
 export function validateAddress(str){
     return str.test(addressPattern);
+}
+
+export function validatePostalCode(str){
+    return str.test(postalCodePattern);
 }
 
 export function validateEmail(str){
