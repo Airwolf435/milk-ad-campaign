@@ -194,8 +194,6 @@ export default function InputForm(){
         return true;
     }
 
-    console.log(scanDataForValid());
-
     function handleBlur(fieldName){
         verifyField(fieldName);
         // verifyField(fieldName, value, (result)=>{
