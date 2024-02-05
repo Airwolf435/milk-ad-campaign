@@ -1,0 +1,9 @@
+.hidden{
+    opacity: 0 !important;
+}
+
+.errorMessage{
+    opacity: 1;
+    transition: opacity 250ms ease-in-out;
+    color: rgb(201, 13, 13);
+}

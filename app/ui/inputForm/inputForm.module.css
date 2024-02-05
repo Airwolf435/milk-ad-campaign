@@ -1,0 +1,13 @@
+.hiddenError{
+    opacity: 0;
+}
+
+.hiddenPage{
+    opacity: 0;
+    display: none;
+}
+
+.visible{
+    opacity: 1;
+    display: block;
+}

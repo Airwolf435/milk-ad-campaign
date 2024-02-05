@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./page.module.css";
+import InputForm from "./ui/inputForm/InputForm";
 
 export default function Home() {
   return (
@@ -8,9 +9,7 @@ export default function Home() {
         <h1></h1>
       </sect>
       <aside>
-        <form>
-
-        </form>
+        <InputForm />
       </aside>
     </main>
   );

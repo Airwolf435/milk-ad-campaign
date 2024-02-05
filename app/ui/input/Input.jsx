@@ -1,54 +1,45 @@
+"use client";
 import styles from "@/app/ui/input/input.module.css";
-import { useState } from "react";
-
-
 
 export default function Input(
     {
         name,
         label,
-        validator,
-        polymorph,
-        type,
+        inputtype,
         placeholder,
-        initial,
         id,
         errorText,
-        forceError,
-        required
+        required,
+        onChange,
+        onBlur,
     }){
-        const [inputValue, setInputValue] = useState(initial);
-        const [displayValue, setDisplayValue] = useState(initial);
-        const [isChanged, setIsChanged] = useState(false);
-        const [errorState, setErrorState] = useState(false);
 
         function handleChange(event){
-            setInputValue(event.target.value);
-            setDisplayValue(polymorph(event.target.value));
-        }
-
-        function handleBlur(){
-            if(validator(inputValue)){
-                errorState(false)
-            }else if(isChanged){
-                errorState(true);
+            if(event.target.type === "checkbox"){
+                onChange(name, event.target.checked);
+            }else{
+                onChange(name, event.target.value);
             }
         }
+
+        function handleBlur(event){
+            onBlur(name);
+        }
+
         return(
             <div>
-                {label ? <label for={id}>{label}</label> : ""}
-                <p className={`${errorState || forceError ? "" : "hidden"}`}>{errorText}</p>
+                {label ? <label htmlFor={id}>{label}</label> : ""}
+                <p className={`${errorText ? styles.errorMessage : styles.hidden}`}>{errorText}</p>
                 <input
-                type={type}
-                name={name}
-                placeholder={placeholder}
-                required={required}
-                value={inputValue}
-                className={`${errorText ? "error" : ""}`}
-                onBlur={handleBlur}
-                onChange={handleChange}>
-                    {displayValue}
-                </input>
+                    type={inputtype}
+                    name={name}
+                    placeholder={placeholder}
+                    required={required}
+                    className={`${errorText ? "error" : ""}`}
+                    onBlur={handleBlur}
+                    onChange={inputtype !== "checkbox" ? handleChange : undefined}
+                    onClick={inputtype === "checkbox" ? handleChange : undefined}
+                />
             </div>
         )
 }
