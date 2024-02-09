@@ -1,7 +1,9 @@
 :root{
-    --off-white: #e0f0f2;
-    --light-blue: #94e3ed;
-    --error-red: #d02929;
+    --off-white: #f4f4f4;;
+    --header-blue: #0e82f6;
+    --text-highlight: #0e82f6;
+    --alt-blue: #208BF3;
+    --off-black: #4C4C4C;
 }
 
 body{
