@@ -2,10 +2,10 @@
 
 import styles from "@/app/ui/inputForm/inputForm.module.css"
 import Input from "@/app/ui/input/Input";
-import { validateAddress, validateBirthday, validateBoolean, validateEmail, validateName, validatePhoneNumber, validatePostalCode } from "@/app/lib/validators";
+import { validateAlpha, validateBirthday, validateBoolean, validateEmail, validateName, validatePhoneNumber, validatePostalCode, validateProvince, validateStreetAddress } from "@/app/lib/validators";
 import { useEffect, useState } from "react";
 import Image from "next/image";
-import { guardianConsentRequired, invalidAddress, invalidBirthday, invalidEmail, invalidFirstName, invalidLastName, invalidPhone, invalidPostal, privacyConsentRequired} from "@/app/lib/errorMessages";
+import { guardianConsentRequired, invalidAddress, invalidBirthday, invalidCity, invalidEmail, invalidFirstName, invalidLastName, invalidPhone, invalidPostal, invalidProvince, privacyConsentRequired} from "@/app/lib/errorMessages";
 
 
 
@@ -15,13 +15,13 @@ export default function InputForm(){
             value: "",
             valid: undefined,
             hasChanged: false,
-            validator: validateName
+            validator: validateAlpha
         },
         clientLName: {
             value: "",
             valid: undefined,
             hasChanged: false,
-            validator: validateName
+            validator: validateAlpha
         },
         clientDOB: {
             value: "",
@@ -41,11 +41,23 @@ export default function InputForm(){
             hasChanged: false,
             validator: validatePhoneNumber
         },
-        clientAddress: {
+        clientStreetAddress: {
             value: "",
             valid: undefined,
             hasChanged: false,
-            validator: validateAddress
+            validator: validateStreetAddress
+        },
+        clientCity:{
+            value: undefined,
+            valid: undefined,
+            hasChanged: false,
+            validator: validateAlpha,
+        },
+        clientProvince:{
+            value: undefined,
+            valid: undefined,
+            hasChanged: false,
+            validator: validateProvince
         },
         clientPostal: {
             value: "",
@@ -71,15 +83,15 @@ export default function InputForm(){
     const [guardianFormData, setGuardianFormData] = useState({
         guardianFName: {
             value: "",
-            valid: false,
+            valid: undefined,
             hasChanged: false,
-            validator: validateName
+            validator: validateAlpha
         },
         guardianLName: {
             value: "",
             valid: undefined,
             hasChanged: false,
-            validator: validateName
+            validator: validateAlpha
         },
         guardianDOB: {
             value: "",
@@ -91,7 +103,7 @@ export default function InputForm(){
             value: "",
             valid: undefined,
             hasChanged: false,
-            validate: validatePhoneNumber
+            validator: validatePhoneNumber
         },
         guardianConsent: {
             value: undefined,
@@ -120,7 +132,7 @@ export default function InputForm(){
             setRevealEasterEgg(false);
         }
 
-    }, [clientFormData, guardianFormData]);
+    }, [clientFormData]);
 
     async function verifyField(fieldName){
         if(formPage === "client"){
@@ -138,6 +150,7 @@ export default function InputForm(){
             let record ={
                 ...guardianFormData[`${fieldName}`]
             };
+            console.log(record);
             return record.validator(record.value).then((result)=>{
                 updateGuardianRecord(fieldName, {
                     ...record,
@@ -291,14 +304,40 @@ export default function InputForm(){
                         onBlur={handleBlur}
                     />
                     <Input
-                        name="clientAddress"
+                        name="clientStreetAddress"
                         label="Street Address:"
                         inputtype="text"
                         placeholder="536 John Doe Street"
-                        id="clientAddress"
+                        id="clientStreetAddress"
                         required={true}
                         errorText={
-                            clientFormData.clientAddress.valid === false && clientFormData.clientAddress.hasChanged ? invalidAddress : undefined
+                            clientFormData.clientStreetAddress.valid === false && clientFormData.clientStreetAddress.hasChanged ? invalidAddress : undefined
+                        }
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                    />
+                    <Input
+                        name="clientCity"
+                        label="City:"
+                        inputtype="text"
+                        placeholder="Oshawa"
+                        id="clientCity"
+                        required={true}
+                        errorText={
+                            clientFormData.clientCity.valid === false && clientFormData.clientCity.hasChanged ? invalidCity : undefined
+                        }
+                        onChange={handleChange}
+                        onBlur={handleBlur}
+                    />
+                    <Input
+                        name="clientProvince"
+                        label="Province:"
+                        inputtype="text"
+                        placeholder="ON"
+                        id="clientProvince"
+                        required={true}
+                        errorText={
+                            clientFormData.clientProvince.valid === false && clientFormData.clientProvince.hasChanged ? invalidProvince : undefined
                         }
                         onChange={handleChange}
                         onBlur={handleBlur}

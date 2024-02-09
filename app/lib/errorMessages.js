@@ -7,3 +7,5 @@ export const invalidAddress = "Please enter a valid street address";
 export const invalidPostal = "Please enter a valid Postal Code";
 export const privacyConsentRequired = "You must consent to the privacy policy to continue.";
 export const guardianConsentRequired = "A legal guardian must consent for you to enter this contest.";
+export const invalidProvince = "Please enter a valid province 2 digit code:"
+export const invalidCity = "Please enter a valid city name:"

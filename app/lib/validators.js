@@ -7,9 +7,9 @@ const emailPattern = new RegExp(/^[a-zA-Z0-9-_]+[.]?[a-zA-Z0-9-_]*@[a-zA-Z0-9-_]
 const birthdayPattern = new RegExp(/^[0-3][0-9]\/[01][0-9]\/[12][0-9]{3}$/);
 const boolPattern = new RegExp(/^(True|true|False|false|0|1|on|off){1}$/);
 const postalCodePattern = new RegExp(/^[a-zA-Z][0-9][a-zA-Z]-?[0-9][a-zA-Z][0-9]$/);
+const provinceCodePattern = new RegExp(/^(ab|alberta|bc|british columbia|mb|manitoba|nb|new brunswick|NL|nl|newfoundland and labrador|nt|northwest territories|ns|nova scotia|nu|nunavut|on|ontario|pe|prince edward island|qc|quebec|sk|saskatchewan|yt|yukon){1}$/);
 
-
-export async function validateName(str){
+export async function validateAlpha(str){
     return alphaOnlyPattern.test(str);
 }
 
@@ -17,7 +17,7 @@ export async function validatePhoneNumber(str){
     return phoneNumberPattern.test(str);
 }
 
-export async function validateAddress(str){
+export async function validateStreetAddress(str){
     return addressPattern.test(str);
 }
 
@@ -60,4 +60,9 @@ export async function validateBirthday(str){
 
 export async function validateBoolean(str){
     return boolPattern.test(str);
+}
+
+export async function validateProvince(str){
+    
+    return provinceCodePattern.test(str ? str.toLowerCase() : undefined);
 }

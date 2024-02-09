@@ -1,0 +1,13 @@
+:root{
+    --off-white: #e0f0f2;
+    --light-blue: #94e3ed;
+    --error-red: #d02929;
+}
+
+body{
+    font-size: inherit;
+    padding: 0;
+    margin: 0;
+    line-height: 1;
+    min-block-size: 100dvh;
+}
