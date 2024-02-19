@@ -24,6 +24,12 @@ body{
     min-block-size: 100dvh;
     background-color: var(--off-white);
     color: var(--off-black);
+    display: flex;
+    flex-direction: column;
+}
+
+main{
+    flex-grow: 1;
 }
 
 h1{
@@ -36,4 +42,8 @@ h2{
 
 h3{
     font-size: max(1.5rem, 1.75cqi);
+}
+
+p{
+    font-size: clamp(1.5rem, 1.5cqi, 24px);
 }
