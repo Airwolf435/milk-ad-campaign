@@ -2,30 +2,58 @@
     color: var(--text-highlight);
 }
 
+.splashHeader{
+    margin-top: 2em;
+    margin-bottom: 6em;
+    text-align: center;
+}
+
+.headerLink{
+    display: block;
+}
+
+.subtleLink{
+    color: var(--off-black);
+    text-decoration: none;
+}
+
+.subtleLink:hover, .subtleLink:focus{
+    color: var(--off-white);
+}
+
+.mainContestLink{
+    background-color: var(--off-white);
+    color: var(--off-black);
+    padding: 0.75em 1.5em;
+    width: fit-content;
+    margin-inline: auto;
+    border-radius: 2em;
+    margin-block: 0.5em;
+    font-size: clamp(1.25em, 4cqi, 1.5em);
+    transition: all 200ms linear;
+    box-shadow: 4px 4px 8px var(--off-black);
+}
+
+.mainContestLink:hover, .mainContestLink:focus{
+    background-color: var(--off-black);
+    color: var(--off-white);
+}
+
 .main{
-    display: grid;
-    grid-template-columns: 0.66fr .33fr;
-    padding-inline: max(20px, 5%);
-    margin-top: max(6rem, 6cqi);
-    gap: 4em;
+    padding-inline: var(--inset-padding);
+    padding-block: 1em
 }
 
-.main .tagline{
-    font-weight: 600;
+.weekly{
+    margin-bottom: 1em;
 }
 
-.main .altText{
-    font-family: Arial, Helvetica, sans-serif;
-}
+@media screen and (width <= 1000px){
+    .headerOverride{
+        clip-path: none;
+    }
 
-.splashSect{
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-}
-
-@media screen and (width < 800px) {
-    .main{
-        grid-template-columns: 1fr;
+    .splashHeader{
+        margin-bottom: 0;
     }
 }

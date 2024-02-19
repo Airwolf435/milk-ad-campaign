@@ -1,0 +1,49 @@
+.imageOfTheWeek{
+    display: flex;
+    flex-wrap: wrap;
+    container: imageOfTheWeek/inline-size;
+    gap: 8em;
+    justify-content: center;
+}
+
+@media screen and (width < 800px){
+    .imageOfTheWeek{
+        gap: 2em;
+    }
+}
+
+.imageOfTheWeek img{
+    max-width: 380px;
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+}
+
+.imageOfTheWeek p{
+    margin-bottom: 2em;
+}
+
+.text{
+    max-width: 60ch;
+}
+
+.highlightText{
+    color: var(--text-highlight);
+}
+
+.header{
+    font-size: clamp(1.5rem, 25cqi, 48px);
+    margin-bottom: 1em;
+}
+
+.contestLink{
+    display: block;
+    background-color: var(--alt-blue);
+    color: var(--off-white);
+    font-size: 24px;
+    padding: 0.5em 1em;
+    border-radius: 24px;
+    box-shadow: 6px 6px 0.5em #155ba1;
+    width: fit-content;
+    margin-inline: auto;
+}

@@ -1,32 +1,30 @@
-import Image from "next/image";
 import styles from "./page.module.css";
-import InputForm from "./ui/inputForm/InputForm";
-import { nunito } from "./lib/fonts";
+import Header from "./ui/header/Header";
+import Link from "next/link";
+import ImageOfTheWeek from "./ui/imageOfTheWeek/ImageOfTheWeek";
+import { ProductPitch } from "./ui/productPitch/ProductPitch";
 export default function Home() {
   return (
+    <>
+    <Header className={styles.headerOverride}>
+      <section className={styles.splashHeader}>
+        <h1>
+          Welcome to Canadian Dairy House!
+        </h1>
+        <p>
+          Join Canadian Dairy House in celebrating the goodness of Canadian dairy and making your mark in our campaign! Enter our Milk Advertising Photobooth Contest now and let your love for milk shine bright while living life right.
+        </p>
+        <Link
+          href="/signup"
+          className={`${styles.headerLink} ${styles.mainContestLink}`}
+        >Enter Contest!</Link>
+        <Link href="/legal" className={`${styles.headerLink} ${styles.subtleLink}`}>Terms & Conditions</Link>
+      </section>
+    </Header>
     <main className={styles.main}>
-      <sect className={styles.splashSect}>
-        <div>
-          <h2 className={nunito.className}>
-            Step into the <span className={styles.highlighter}>Spotlight:</span>
-            </h2>
-          <h3 className={nunito.className}>
-            Enter the Milk Advertising <span className={styles.highlighter}>Photobooth Contest!</span>
-          </h3>
-        </div>
-        <p className={`${styles.altText} ${styles.tagline}`}>
-          <span className={styles.highlighter}>Enter</span> our Milk Advertising Photobooth contest for a chance to be <span className={styles.highlighter}>featured in our promotions</span>. Don't miss out on this opportunity to showcase your love for milk and dairy products in an active lifestyle.
-        </p>
-        <p className={styles.altText}>
-          Our winners will be selected through a random draw to ensure fairness. However, please note that judges reserve the right to remove entries for any reason, including failure to comply with contest rules or submission of inappropriate content.
-        </p>
-        <video autoPlay muted loop>
-          <source src="/assets/videos/splashVideo.mp4" />
-        </video>
-      </sect>
-      <aside>
-        <InputForm />
-      </aside>
+      <ImageOfTheWeek className={`${styles.weekly}`}/>
+      <ProductPitch/>
     </main>
+    </>
   );
 }
