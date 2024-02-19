@@ -1,0 +1,23 @@
+.legalMain{
+    padding-inline: var(--inset-padding);
+}
+
+.leagalHeader{
+    text-align: center;
+    container: legalHeader/inline-size;
+    margin-block: 2em;
+}
+
+.leagalHeader h1{
+    color: var(--text-highlight);
+    font-size: clamp(3rem, 10cqi, 128px);
+    margin-bottom: 0.25em;
+}
+
+.legalSect{
+    margin-bottom: 2em;
+}
+
+.legalSect:last-of-type{
+    margin-bottom: 0;
+}

@@ -5,6 +5,7 @@
     padding-inline: var(--inset-padding);
     font-size: clamp(1.15rem, 2cqi, 24px);
     padding-top: 1em;
+    overflow: hidden;
 }
 
 .footer section{

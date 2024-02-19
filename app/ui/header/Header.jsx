@@ -1,5 +1,5 @@
 import { nunito } from "@/app/lib/fonts"
-import styles from "./header.module.css"
+import styles from "@/app/ui/header/header.module.css"
 import { MainNav } from "../mainNav/MainNav"
 
 export default function Header(){
