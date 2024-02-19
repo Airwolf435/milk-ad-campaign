@@ -9,7 +9,7 @@ export function ProductPitch({className}){
                 Discover a wide array of dairy delights that will tantalize your taste buds and nourish your body.
             </p>
             <img
-                src="./assets/imgs/productimg.png"
+                src="/assets/imgs/productimg.png"
                 alt="Some of Canadian Dairy House's products"
                 title="Some of Canadian Dairy House's products"
             />
