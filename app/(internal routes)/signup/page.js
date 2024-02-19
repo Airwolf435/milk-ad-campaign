@@ -2,7 +2,8 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import InputForm from "../../ui/inputForm/InputForm";
 import { nunito } from "../../lib/fonts";
-export default function Home() {
+
+export default function SignupPage() {
   return (
     <main className={styles.main}>
       <sect className={styles.splashSect}>
