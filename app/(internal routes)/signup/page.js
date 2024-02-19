@@ -1,7 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
-import InputForm from "../ui/inputForm/InputForm";
-import { nunito } from "../lib/fonts";
+import InputForm from "../../ui/inputForm/InputForm";
+import { nunito } from "../../lib/fonts";
 export default function Home() {
   return (
     <main className={styles.main}>
