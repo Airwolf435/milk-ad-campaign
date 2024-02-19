@@ -1,9 +1,55 @@
 .hidden{
     opacity: 0 !important;
+    display: none;
 }
 
 .errorMessage{
+    display: block;
     opacity: 1;
     transition: opacity 250ms ease-in-out;
     color: rgb(201, 13, 13);
+}
+
+.inputContainer{
+    container: inputBox / inline-size;
+}
+
+.inputContainer input{
+    display: block;
+    border: 1px solid var(--alt-blue);
+    border-radius: 4px;
+    font-size: max(1.5rem, 5cqi);
+    padding-inline: 0.25em;
+    padding-block: 0.15em;
+    width: 100%;
+}
+
+.checkbox{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    gap: 2em;
+}
+
+.checkbox input{
+    width: 2rem;
+    height: 2rem;
+    justify-self: flex-start;
+}
+
+.checkbox label{
+    font-size: max(1.15rem, 1.25cqi) !important;
+}
+
+.labelBox label{
+    display: inline-block;
+    max-width: fit-content;
+    margin-bottom: 0.25em;
+    font-size: max(1.25rem, 6cqi);
+}
+
+.labelBox p{
+    display: inline-block;
+    font-size: max(1.15rem, 3cqi);
+    margin-inline-start: 1em;
 }

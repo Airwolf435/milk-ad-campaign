@@ -1,4 +1,5 @@
 "use client";
+import { nunito } from "@/app/lib/fonts";
 import styles from "@/app/ui/input/input.module.css";
 
 export default function Input(
@@ -22,14 +23,16 @@ export default function Input(
             }
         }
 
-        function handleBlur(event){
+        function handleBlur(){
             onBlur(name);
         }
 
         return(
-            <div>
-                {label ? <label htmlFor={id}>{label}</label> : ""}
-                <p className={`${errorText ? styles.errorMessage : styles.hidden}`}>{errorText}</p>
+            <div className={`${styles.inputContainer} ${inputtype === "checkbox" ? styles.checkbox : undefined}`}>
+                <div className={styles.labelBox}>
+                    {label ? <label htmlFor={id}>{label}</label> : ""}
+                    <p className={`${errorText ? styles.errorMessage : styles.hidden}`}>{errorText}</p>
+                </div>
                 <input
                     type={inputtype}
                     name={name}
@@ -37,8 +40,9 @@ export default function Input(
                     required={required}
                     className={`${errorText ? "error" : ""}`}
                     onBlur={handleBlur}
-                    onChange={inputtype !== "checkbox" ? handleChange : undefined}
-                    onClick={inputtype === "checkbox" ? handleChange : undefined}
+                    // onChange={inputtype !== "checkbox" ? handleChange : undefined}
+                    // onClick={inputtype === "checkbox" ? handleChange : undefined}
+                    onChange={handleChange}
                 />
             </div>
         )

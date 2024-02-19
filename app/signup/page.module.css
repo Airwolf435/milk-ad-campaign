@@ -1,0 +1,32 @@
+.highlighter{
+    color: var(--text-highlight);
+}
+
+.main{
+    display: grid;
+    grid-template-columns: 0.66fr .33fr;
+    padding-inline: max(20px, 5%);
+    margin-top: max(6rem, 6cqi);
+    gap: 4em;
+}
+
+.main .tagline{
+    font-weight: 600;
+}
+
+.main .altText{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.splashSect{
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    font-size: max(1.5rem, 1.5cqi);
+}
+
+@media screen and (width < 800px) {
+    .main{
+        grid-template-columns: 1fr;
+    }
+}

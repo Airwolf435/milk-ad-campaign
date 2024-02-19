@@ -1,0 +1,23 @@
+.footer{
+    background-color: var(--alt-blue);
+    color: var(--off-white);
+    margin-top: 1em;
+    padding-inline: var(--inset-padding);
+    font-size: clamp(1.15rem, 2cqi, 24px);
+    padding-top: 1em;
+}
+
+.footer section{
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer section:first-of-type{
+    margin-bottom: 0.75em;
+}
+
+.companyInfo{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}

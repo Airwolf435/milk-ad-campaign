@@ -4,7 +4,7 @@
 
 .hiddenPage{
     opacity: 0;
-    display: none;
+    display: none !important;
 }
 
 .visible{
@@ -12,13 +12,51 @@
     display: block;
 }
 
-.formBody{
-    display: block;
-    max-width: 800px;
-    width: 100%;
-    margin-inline: auto;
+.form{
+    background: linear-gradient(90deg, #e4e4e4, #f0f0f0);
     padding: 1em;
-    border: 1px solid black;
     border-radius: 8px;
-    
+    box-shadow: 22px 22px 48px #c5c5c5dc,
+    -22px -22px 48px #fbfbfb;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.formPage{
+    display: flex;
+    flex-direction: column;
+    gap: 0.75em;
+}
+
+.formControls{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    margin-top: 1em;
+}
+
+.formControls button{
+    width: 100%;
+    background-color: var(--alt-blue);
+    color: var(--off-white);
+    font-size: max(2rem, 2cqi);
+    border-radius: 4px;
+    padding-block: 0.25em;
+}
+
+.formControls button:focus, .formControls button:hover{
+    background-color: #3b93eb;
+}
+
+.formControls button:disabled{
+    color: var(--off-black);
+    background-color: #1864af;
+}
+
+.completePage{
+    text-align: center;
+    padding-block: 4em;
+}
+
+.completePage h2{
+    color: var(--alt-blue);
 }

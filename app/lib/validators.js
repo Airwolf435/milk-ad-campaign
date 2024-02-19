@@ -1,6 +1,7 @@
-"use server";
+"use client";
 
 const alphaOnlyPattern = new RegExp(/^[a-zA-Z]+$/);
+const numericOnlyPattern = new RegExp(/^[0-9]+$/)
 const phoneNumberPattern = new RegExp(/^(\([0-9]{3}\)|[0-9]{3})-?[0-9]{3}-?[0-9]{4}$/);
 const addressPattern = new RegExp(/^[0-9]{1,4}(\s[a-zA-Z]+)+$/);
 const emailPattern = new RegExp(/^[a-zA-Z0-9-_]+[.]?[a-zA-Z0-9-_]*@[a-zA-Z0-9-_]+.[a-zA-Z]{2,3}$/);
@@ -11,6 +12,10 @@ const provinceCodePattern = new RegExp(/^(ab|alberta|bc|british columbia|mb|mani
 
 export async function validateAlpha(str){
     return alphaOnlyPattern.test(str);
+}
+
+export async function validateNumeric(str){
+    return numericOnlyPattern.test(str);
 }
 
 export async function validatePhoneNumber(str){

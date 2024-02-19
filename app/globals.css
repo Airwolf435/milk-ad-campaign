@@ -1,15 +1,39 @@
 :root{
-    --off-white: #f4f4f4;;
-    --header-blue: #0e82f6;
+    --off-white: #f4f4f4;
+    --hover-white: #afc6d6;
     --text-highlight: #0e82f6;
     --alt-blue: #208BF3;
     --off-black: #4C4C4C;
+    --inset-padding: max(10px, 5%);
 }
 
-body{
+*{
     font-size: inherit;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
+}
+
+video{
+    display: block;
+    max-width: 100%;
+}
+
+body{
     line-height: 1;
     min-block-size: 100dvh;
+    background-color: var(--off-white);
+    color: var(--off-black);
+}
+
+h1{
+    font-size: max(2rem, 2.75cqi);
+}
+
+h2{
+    font-size: max(1.75rem, 2cqi);
+}
+
+h3{
+    font-size: max(1.5rem, 1.75cqi);
 }
