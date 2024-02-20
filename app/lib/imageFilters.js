@@ -14,6 +14,7 @@ export function noirFilm(pixels) {
     return pixels;
 }
 
+//This is a filter from stuarts example, it will be replaced and is here soley for testing purposes.
 export function rgbSplit(pixels) {
     for (let i = 0; i < pixels.data.length; i += 4) {
         pixels.data[i + 0] = pixels.data[i + 100]; // RED
@@ -21,4 +22,12 @@ export function rgbSplit(pixels) {
         pixels.data[i + 2] = pixels.data[i + 202]; // Blue
     }
     return pixels;
+}
+
+export function miamiVibe(width, height){
+    let gradient = this.createLibearGradient(0,0, width, height);
+    gradient.addColorStop(1, "##d9802646");
+    gradient.addColorStop(1, "#9500b146");
+    this.fillStyle = gradient;
+    this.fillRect(0,0, width, height);
 }
