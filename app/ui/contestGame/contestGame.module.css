@@ -8,8 +8,9 @@
 .contestWindow{
     display: block;
     aspect-ratio: 1920/1080;
-    width: 100%;
+    width: clamp(420px, 60cqi, 1200px);
     max-width: 1200px;
+    min-width: 480px;
     margin-inline: auto;
     margin-block: auto;
     height: auto;

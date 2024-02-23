@@ -8,8 +8,6 @@ import { createImage } from "@/app/lib/helpers";
 // Credit to Stuart Sackler, their example on using canvas 2d contexts to manipulate images from the webcam were translated from vanilla JS into something usable within react.
 export default function ContestGame(){
     const [activeFilter, setActiveFilter] = useState();
-    const [imageHistory, setImageHistory] = useState([]);
-    const [imageBase, setImageBase] = useState([]);
     const [videoPlayer, setVideoPlayer] = useState();
     const [context, setContext] = useState();
     const [updateInterval, setUpdateInterval] = useState();
@@ -89,6 +87,9 @@ export default function ContestGame(){
         newPhoto.href = canvasSnap;
         newPhoto.innerHTML = `<img src=${canvasSnap} class=${styles.historyPic} alt="Photo taken as part of the milk ad campaign"/>`;
         historyStack.appendChild(newPhoto);
+        setStickers([]);
+        setActiveSticker(undefined);
+        setActiveFilter(undefined);
     }
     
 
