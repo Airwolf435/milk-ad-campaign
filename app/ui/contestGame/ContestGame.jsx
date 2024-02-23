@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react"
 import styles from "./contestGame.module.css"
-import { blackHot, miamiVibe, noirFilm, rgbSplit, tvDistortion } from "@/app/lib/imageFilters";
+import { blackHot, miamiVibe, noirFilm } from "@/app/lib/imageFilters";
 import { createImage } from "@/app/lib/helpers";
 import { useRouter } from "next/navigation";
 
@@ -15,6 +15,7 @@ export default function ContestGame(){
     const [videoStream, setVideoStream] = useState();
     const [stickers, setStickers] = useState([]);
     const [activeSticker, setActiveSticker] = useState();
+    const [activeStickerText, setActiveStickerText] = useState();
     const router = useRouter();
 
     const filters = {
@@ -61,6 +62,8 @@ export default function ContestGame(){
     }
 
     function handleStickerClick(src){
+        console.log(src);
+        setActiveStickerText(src)
         setActiveSticker(src);
     }
 
@@ -150,19 +153,19 @@ export default function ContestGame(){
                 <aside className={`${styles.stacker} ${styles.stickerStack}`}>
                     <h2>Stickers</h2>
                     <div className={styles.stickerButtonStack}>
-                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/coolCow.png")}}>
+                        <button className={`${styles.stickerButton} ${activeStickerText == "/assets/imgs/stickers/coolCow.png" ? styles.activeSticker : undefined}`} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/coolCow.png", 1)}}>
                             <img src="/assets/imgs/stickers/coolCow.svg"  alt="" className={styles.sticker}/>
                         </button>
-                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/happyCow.png")}}>
+                        <button className={`${styles.stickerButton} ${activeStickerText == "/assets/imgs/stickers/happyCow.png" ? styles.activeSticker : undefined}`} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/happyCow.png", 2)}}>
                             <img src="/assets/imgs/stickers/happyCow.svg"  alt="" className={styles.sticker}/>
                         </button>
-                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/loveCow.png")}}>
+                        <button className={`${styles.stickerButton} ${activeStickerText == "/assets/imgs/stickers/loveCow.png" ? styles.activeSticker : undefined}`} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/loveCow.png", 3)}}>
                             <img src="/assets/imgs/stickers/loveCow.svg"  alt="" className={styles.sticker}/>
                         </button>
-                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/cow.png")}}>
+                        <button className={`${styles.stickerButton} ${activeStickerText == "/assets/imgs/stickers/cow.png" ? styles.activeSticker : undefined}`} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/cow.png", 4)}}>
                             <img src="/assets/imgs/stickers/cow.svg"  alt="" className={styles.sticker}/>
                         </button>
-                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/carton.png")}}>
+                        <button className={`${styles.stickerButton} ${activeStickerText == "/assets/imgs/stickers/carton.png" ? styles.activeSticker : undefined}`} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/carton.png", 5)}}>
                             <img src="/assets/imgs/stickers/carton.svg"  alt="" className={styles.sticker}/>
                         </button>
                     </div>

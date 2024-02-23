@@ -40,8 +40,6 @@ export default function Input(
                     required={required}
                     className={`${errorText ? "error" : ""}`}
                     onBlur={handleBlur}
-                    // onChange={inputtype !== "checkbox" ? handleChange : undefined}
-                    // onClick={inputtype === "checkbox" ? handleChange : undefined}
                     onChange={handleChange}
                 />
             </div>

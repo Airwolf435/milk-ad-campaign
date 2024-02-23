@@ -150,6 +150,12 @@
     animation-timing-function: ease-in;
 }
 
+.activeSticker{
+    scale: 1.08;
+    box-shadow: 4px 4px 6px var(--off-white);
+    transition: all 0.4s linear;
+}
+
 
 @keyframes fadeIn{
     0%{
