@@ -1,0 +1,8 @@
+.contestPage h1{
+    text-align: center;
+    color: var(--text-highlight);
+    margin-block: 0.5em;
+    font-size: clamp(2rem, 3cqi, 4rem);
+    max-width: 80%;
+    margin-inline: auto;
+}

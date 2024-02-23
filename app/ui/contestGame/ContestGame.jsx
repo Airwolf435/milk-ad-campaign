@@ -85,9 +85,9 @@ export default function ContestGame(){
         let canvasSnap = document.querySelector(`.${styles.contestWindow}`).toDataURL("images/png");
 
         let newPhoto = document.createElement("a");
-        newPhoto.setAttribute("download", true);
+        newPhoto.setAttribute("download", "CanadianDairyHouseEntry");
         newPhoto.href = canvasSnap;
-        newPhoto.innerHTML = `<img src=${canvasSnap} alt="Photo taken as part of the milk ad campaign"/>`;
+        newPhoto.innerHTML = `<img src=${canvasSnap} class=${styles.historyPic} alt="Photo taken as part of the milk ad campaign"/>`;
         historyStack.appendChild(newPhoto);
     }
     
@@ -119,33 +119,50 @@ export default function ContestGame(){
     },[activeFilter, stickers])
 
     return (
-        <section>
-            <aside>
-                <h2>Filters</h2>
-                <button value={"noirFilm"} onMouseDown={handleFilterButton}>Noir Filter</button>
-                <button value={"prism"} onMouseDown={handleFilterButton}>Prism</button>
-                <button value={"miamiVibe"} onMouseDown={handleFilterButton}>Miami Vibe</button>
-            </aside>
-            <div>
-                <canvas className={styles.contestWindow} width="1920" height="1080" onClick={hadnleCanvasClick}></canvas>
-                <video src="" className={styles.hiddenPlayer}></video>
-                <button onClick={handleTakePhoto}>Camera Snap</button>
-            </div>
-            <aside>
-                <h2>Stickers</h2>
-                <button onClick={()=>{return handleStickerClick("/assets/imgs/stickers/coolCow.png")}}>
-                    <img src="/assets/imgs/stickers/coolCow.svg"  alt="" className={styles.sticker}/>
-                </button>
-                <button onClick={()=>{return handleStickerClick("/assets/imgs/stickers/happyCow.png")}}>
-                    <img src="/assets/imgs/stickers/happyCow.svg"  alt="" className={styles.sticker}/>
-                </button>
-                <button onClick={()=>{return handleStickerClick("/assets/imgs/stickers/loveCow.png")}}>
-                    <img src="/assets/imgs/stickers/loveCow.svg"  alt="" className={styles.sticker}/>
-                </button>
-            </aside>
-            <section id="historyStack">
-
+        <>
+            <section className={styles.contest}>
+                <div className={styles.filterHolder}>
+                    <aside className={`${styles.stacker} ${styles.filterStack}`}>
+                        <h2>Filters</h2>
+                        <button 
+                            className={activeFilter === "noirFilm" ? styles.active : undefined}
+                            value={"noirFilm"} onMouseDown={handleFilterButton}>Noir Filter</button>
+                        <button
+                            className={activeFilter === "blackHot" ? styles.active : undefined}
+                            value={"blackHot"} onMouseDown={handleFilterButton}>BlackHot Filter</button>
+                        <button 
+                            className={activeFilter === "miamiVibe" ? styles.active : undefined}
+                            value={"miamiVibe"} onMouseDown={handleFilterButton}>Miami Vibe</button>
+                    </aside>
+                </div>
+                <div className={styles.canvasSect}>
+                    <canvas className={styles.contestWindow} width="1920" height="1080" onClick={hadnleCanvasClick}></canvas>
+                    <video src="" className={styles.hiddenPlayer}></video>
+                    <button className={styles.cameraButton} onClick={handleTakePhoto}>Take Picture</button>
+                </div>
+                <aside className={`${styles.stacker} ${styles.stickerStack}`}>
+                    <h2>Stickers</h2>
+                    <div className={styles.stickerButtonStack}>
+                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/coolCow.png")}}>
+                            <img src="/assets/imgs/stickers/coolCow.svg"  alt="" className={styles.sticker}/>
+                        </button>
+                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/happyCow.png")}}>
+                            <img src="/assets/imgs/stickers/happyCow.svg"  alt="" className={styles.sticker}/>
+                        </button>
+                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/loveCow.png")}}>
+                            <img src="/assets/imgs/stickers/loveCow.svg"  alt="" className={styles.sticker}/>
+                        </button>
+                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/cow.png")}}>
+                            <img src="/assets/imgs/stickers/cow.svg"  alt="" className={styles.sticker}/>
+                        </button>
+                        <button className={styles.stickerButton} onClick={()=>{return handleStickerClick("/assets/imgs/stickers/carton.png")}}>
+                            <img src="/assets/imgs/stickers/carton.svg"  alt="" className={styles.sticker}/>
+                        </button>
+                    </div>
+                </aside>
             </section>
-        </section>
+            <section id="historyStack" className={styles.historyStack}>
+            </section>
+        </>
     )
 }
