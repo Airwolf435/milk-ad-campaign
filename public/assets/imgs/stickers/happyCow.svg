@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Sticker-Funny_Cow" data-name="Sticker-Funny Cow" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 159.34 174.43">
+  <g>
+    <path d="m47.48,42.94s-10.02-11.57-24.98-8.28c-14.96,3.29,10.59,26.78,10.59,26.78l14.39-18.5Z" fill="#fff" stroke="#231f20" stroke-miterlimit="10"/>
+    <path d="m46.27,44.69s-9.44-9.38-22.02-7.38c-12,1.9,10.76,21.85,10.76,21.85l11.26-14.47Z" fill="#ed7a9a" stroke="#231f20" stroke-miterlimit="10" stroke-width=".75"/>
+  </g>
+  <g>
+    <path d="m117.64,42.94s10.02-11.57,24.98-8.28-10.59,26.78-10.59,26.78l-14.39-18.5Z" fill="#fff" stroke="#231f20" stroke-miterlimit="10"/>
+    <path d="m118.85,44.69s9.44-9.38,22.02-7.38-10.76,21.85-10.76,21.85l-11.26-14.47Z" fill="#ed7a9a" stroke="#231f20" stroke-miterlimit="10" stroke-width=".75"/>
+  </g>
+  <circle cx="82.45" cy="82.05" r="53.23" fill="#fff" stroke="#231f20" stroke-miterlimit="10"/>
+  <ellipse cx="60.48" cy="78.55" rx="9.52" ry="14.56" transform="translate(-16.52 16.11) rotate(-13.37)" fill="#231f20" stroke="#fff" stroke-miterlimit="10"/>
+  <ellipse cx="103.56" cy="78.55" rx="14.56" ry="9.52" transform="translate(3.19 161.14) rotate(-76.63)" fill="#231f20" stroke="#fff" stroke-miterlimit="10"/>
+  <ellipse cx="82.45" cy="115.32" rx="66.54" ry="33.27" fill="#f9c0c0" stroke="#231f20" stroke-miterlimit="10"/>
+  <ellipse cx="103.56" cy="108.38" rx="4.61" ry="7.31" transform="translate(-31.79 172.81) rotate(-71.76)" fill="#231f20" stroke-width="0"/>
+  <ellipse cx="60.48" cy="108.38" rx="7.31" ry="4.61" transform="translate(-30.89 24.38) rotate(-18.24)" fill="#231f20" stroke-width="0"/>
+  <circle cx="65.2" cy="75.66" r="3" fill="#fff" stroke="#231f20" stroke-miterlimit="10"/>
+  <circle cx="99.4" cy="75.99" r="3" fill="#fff" stroke="#231f20" stroke-miterlimit="10"/>
+  <path d="m89.31,28.82c8.79,1,9.57,4.75,7.46,9.66-1.36,3.16-3.97,5.71-8.91,5.36-12.19-.87-7.67,9.09-13.83,9.58-27.76,2.18-24.27-13.74-24.27-13.74l13.88-7.36c3.01-1.6,8.73-2.35,12.84-2.68,15.74-1.27,8.05-1.36,12.83-.81Z" fill="#231f20" stroke-width="0"/>
+  <path d="m113.12,44.98c-10.12-3.21-15.98,11.25-6.44,15.89.12.06.25.12.38.18,4.56,2.1,6.35,4.78,6.77,7.36.52,3.18,4.38,4.55,6.74,2.35,3.94-3.68,7.26-8.74,5.64-14.66s-7.5-9.34-13.09-11.11Z" fill="#231f20" stroke-width="0"/>
+  <path d="m64.44,128.78s9.09,5.31,18.69,5.31,19.19-5.45,19.19-5.45" fill="none" stroke="#231f20" stroke-miterlimit="10"/>
+  <path d="m102.01,128.88s3.42,4.97.67,10.35-9.16-6.7-9.16-6.7l8.49-3.65Z" fill="#f20f0f" stroke="#231f20" stroke-miterlimit="10"/>
+</svg>

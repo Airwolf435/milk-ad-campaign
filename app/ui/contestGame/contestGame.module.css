@@ -2,9 +2,24 @@
     display: block;
     aspect-ratio: 1920/1080;
     max-width: 60%;
+    margin-inline: auto;
     height: auto;
 }
 
 .hiddenPlayer{
     display: none;
+}
+
+.sticker{
+    max-width: clamp(100px, 4cqi, 200px);
+    width: 100%;
+    aspect-ratio: 1/1;
+    height: auto;
+}
+
+.hiddenSticker{
+    display: block;
+    width: 50px;
+    aspect-ratio: 1/1;
+    height: auto;
 }
