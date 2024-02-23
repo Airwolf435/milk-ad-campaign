@@ -55,7 +55,7 @@
 
 @media screen and (width <= 1000px){
     .headerOverride{
-        clip-path: none;
+        clip-path: none !important;
     }
 
     .splashHeader{

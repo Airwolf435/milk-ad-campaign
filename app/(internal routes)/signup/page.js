@@ -6,7 +6,7 @@ import { nunito } from "../../lib/fonts";
 export default function SignupPage() {
   return (
     <main className={styles.main}>
-      <sect className={styles.splashSect}>
+      <section className={styles.splashSect}>
         <div>
           <h2 className={nunito.className}>
             Step into the <span className={styles.highlighter}>Spotlight:</span>
@@ -24,7 +24,7 @@ export default function SignupPage() {
         <video autoPlay muted loop>
           <source src="/assets/videos/splashVideo.mp4" />
         </video>
-      </sect>
+      </section>
       <aside>
         <InputForm />
       </aside>

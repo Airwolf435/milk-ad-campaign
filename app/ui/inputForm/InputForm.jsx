@@ -4,9 +4,9 @@ import styles from "@/app/ui/inputForm/inputForm.module.css"
 import Input from "@/app/ui/input/Input";
 import { validateAlpha, validateBirthday, validateBoolean, validateEmail, validateName, validateNumeric, validatePhoneNumber, validatePostalCode, validateProvince, validateStreetAddress } from "@/app/lib/validators";
 import { useEffect, useState } from "react";
-import Image from "next/image";
 import { guardianConsentRequired, invalidAddress, invalidBirthday, invalidCity, invalidEmail, invalidFirstName, invalidLastName, invalidPhone, invalidPostal, invalidProvince, invalidStreetNumber, privacyConsentRequired} from "@/app/lib/errorMessages";
-
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 
 export default function InputForm(){
@@ -123,6 +123,7 @@ export default function InputForm(){
     const [hasError, setHasError] = useState(true);
     const [requireGuardian, setRequireGuardian] = useState(undefined);
     const [revealEasterEgg, setRevealEasterEgg] = useState(false);
+    const router = useRouter();
 
     useEffect(()=>{
         if(clientFormData.clientDOB.valid){
@@ -133,9 +134,7 @@ export default function InputForm(){
             setRequireGuardian(birthday > minimumDate);
         }
         if(clientFormData.clientDOB.value === "173467321476Charlie32789777643Tango732Victor73117888732476789764376 Lock"){
-            setRevealEasterEgg(true);
-        }else if(revealEasterEgg){
-            setRevealEasterEgg(false);
+            router.push("https://youtu.be/bl5TUw7sUBs?si=Ook2JfQE7VIXqoIS&t=91");
         }
     }, [clientFormData]);
 
@@ -254,10 +253,11 @@ export default function InputForm(){
         event.preventDefault();
         if(scanDataForValid()){
             setFormPage("complete");
-            console.log(clientFormData)
+            localStorage.setItem("permitContest", true);
             if(requireGuardian){
                 console.log(guardianFormData);
             }
+            setTimeout(()=>{})
         }else{
             console.log("failed");
             console.log(clientFormData.clientPrivacyConsent.value);
@@ -309,9 +309,9 @@ export default function InputForm(){
                 />
                 <Input
                     name="clientStreetAddress"
-                    label="Street Address:"
+                    label="Street Name:"
                     inputtype="text"
-                    placeholder="536 John Doe Street"
+                    placeholder="John Doe Street"
                     id="clientStreetAddress"
                     required={true}
                     errorText={
@@ -490,6 +490,7 @@ export default function InputForm(){
             <section className={`${styles.completePage} ${formPage === "complete" ? styles.visible : styles.hiddenPage}`}>
                     <h2>Get Ready To Shine</h2>
                     <p>Thank you for submitting your entry</p>
+                    <Link href="/contest">Click here to participate!</Link>
             </section>
             <div className={styles.formControls}>
                 {requireGuardian && formPage === "guardian" ? <button onClick={handlePrev}>Go Back</button> : undefined}

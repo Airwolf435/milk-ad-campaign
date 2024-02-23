@@ -10,7 +10,7 @@ export default function Footer(){
                 <p>Milkcontent@milk.com</p>
                 <Link href="/legal">Legal</Link>
             </div>
-            <img src="./assets/imgs/logo-cow.svg" alt="" aria-hidden={true}/>
+            <img className={styles.logo} src="./assets/imgs/logo-white.svg" alt="" aria-hidden={true}/>
         </section>
         <section>
             <div className="">

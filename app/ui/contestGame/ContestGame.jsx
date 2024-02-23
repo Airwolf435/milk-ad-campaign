@@ -4,6 +4,7 @@ import { useEffect, useState } from "react"
 import styles from "./contestGame.module.css"
 import { blackHot, miamiVibe, noirFilm, rgbSplit, tvDistortion } from "@/app/lib/imageFilters";
 import { createImage } from "@/app/lib/helpers";
+import { useRouter } from "next/navigation";
 
 // Credit to Stuart Sackler, their example on using canvas 2d contexts to manipulate images from the webcam were translated from vanilla JS into something usable within react.
 export default function ContestGame(){
@@ -14,6 +15,7 @@ export default function ContestGame(){
     const [videoStream, setVideoStream] = useState();
     const [stickers, setStickers] = useState([]);
     const [activeSticker, setActiveSticker] = useState();
+    const router = useRouter();
 
     const filters = {
         "noirFilm": noirFilm,
@@ -94,6 +96,10 @@ export default function ContestGame(){
     
 
     useEffect(()=>{
+        console.log(localStorage.getItem("permitContest"));
+        if(!localStorage.getItem("permitContest")){
+            router.push("/signup");
+        }
         navigator.mediaDevices.getUserMedia({
             video: true,
             audio: false,
@@ -101,7 +107,7 @@ export default function ContestGame(){
             setVideoStream(newVideoStream);
         });
         setContext(document.querySelector(`.${styles.contestWindow}`).getContext("2d"));
-    });
+    }, []);
 
     useEffect(()=>{
         if(videoStream && context && !videoPlayer){
