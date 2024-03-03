@@ -4,7 +4,32 @@ import { inter } from "@/app/lib/fonts";
 
 export default function Footer(){
     return <footer className={`${styles.footer} ${inter.className}`}>
-        <section>
+        <section className={styles.projectCredits}>
+            <ul>
+                <li>
+                    <p>
+                        <a href="akshatsanan.com" target="_blank" rel="noreferrer nofollow noopener">
+                            Project Lead and Writer - Akshat Sanan
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="https://www.johnkeenan.ca" target="_blank" rel="noreferrer nofollow noopener">
+                            Developer - John Keenan
+                        </a>
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <a href="https://portfolio.jpostolan.com/" target="_blank" rel="noreferrer nofollow noopener">
+                            Artist / Designer - Julian Postolan
+                        </a>
+                    </p>
+                </li>
+            </ul>
+        </section>
+        <section className={styles.companyDetailsSect}>
             <div className={styles.companyInfo}>
                 <p>555-999-MILK</p>
                 <p>Milkcontent@milk.com</p>
@@ -12,8 +37,8 @@ export default function Footer(){
             </div>
             <img className={styles.logo} src="./assets/imgs/logo-white.svg" alt="" aria-hidden={true}/>
         </section>
-        <section>
-            <div className="">
+        <section className={styles.socialsCR}>
+            <div>
                 <Link href="./">
                     <img
                         src="./assets/imgs/facebook-icon.svg"
